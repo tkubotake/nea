@@ -2,6 +2,14 @@
 
 An automatic essay scoring system based on convolutional and recurrent neural networks, including GRU and LSTM.
 
+## Environment
+
+* Keras 2.0.8
+* Theano 0.9.0
+* Numpy 1.13.3
+* Scipy 1.0.0
+* Python 2.7.9
+
 ### Set Up ###
 
 * Install Keras (with Theano backend)
@@ -35,6 +43,10 @@ THEANO_FLAGS="device=gpu0,floatX=float32" python train_nea.py
 	-p 1	# Prompt ID
 	--emb embeddings.w2v.txt
 	-o output_dir
+```
+
+```bash
+THEANO_FLAGS="device=cuda*,floatX=float32" python train_nea.py -tr data/fold_0/train.tsv -tu data/fold_0/dev.tsv -ts data/fold_0/test.tsv -p 1 --emb En_vectors.txt -o output_dir
 ```
 
 ### Frequently Asked Questions ###
